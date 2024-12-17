@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Слушаем порт 5000 (или другой)
-EXPOSE 5000
+EXPOSE 4411
 
 # Запуск бэкенда
 CMD ["npm", "start:dev"]
