@@ -3,6 +3,7 @@
 
 # Dependencies
 node_modules/
+venv/
 
 # Environment files
 .env
