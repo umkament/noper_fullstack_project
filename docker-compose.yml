@@ -25,6 +25,8 @@ services:
       - "4411"  # Открыт для взаимодействия между контейнерами
     networks:
       - noper
+    env_file:
+      - ./backend/.env 
 
   frontend:
     build: 
@@ -34,3 +36,5 @@ services:
       - "80"  # Открыт для взаимодействия с Nginx
     networks:
       - noper
+    env_file:
+      - ./frontend/.env 
