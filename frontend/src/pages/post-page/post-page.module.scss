@@ -1,0 +1,140 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+  margin-bottom: 6rem;
+  padding-top: 110px;
+}
+
+.mainContainer img {
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+  border-radius: 0.1rem;
+  box-shadow: 0 4px 8px 5px var(--color-dark-900);
+}
+
+.photoWrap {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  align-items: center; /* Выравнивание всех элементов по центру по вертикали */
+  justify-content: space-between; /* Равномерное распределение кнопок */
+  margin: 0 0.1rem; /* Отступ между элементами (опционально) */
+
+  .view,
+  .date {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-light-900);
+  }
+
+  .view {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .viewsCount {
+    margin-right: 0.15rem;
+    font-size: 1rem;
+    color: var(--color-light-900);
+  }
+
+  .eyeIcon {
+  }
+
+  .saved {
+    transform: translateY(-50%); /* Смещаем кнопку обратно вверх на половину её отступа */
+  }
+
+  .favorite {
+    padding: 0 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+.textWrap {
+  width: 100%;
+  background: linear-gradient(var(--color-dark-700) 50%, var(--color-accent-700) 250%);
+  border-radius: 0 0 0.3% 0.3%;
+  box-shadow: 0 6px 11px var(--color-accent-700);
+}
+
+.text {
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+
+  width: 94%;
+
+  color: var(--color-light-900) !important;
+  word-wrap: break-word; /* Предотвращает выход слов за пределы */
+  overflow-wrap: break-word; /* Альтернативная поддержка для переноса текста */
+}
+
+.tags {
+  width: 94%;
+  font-size: 1rem !important;
+  color: var(--color-accent-900) !important;
+}
+
+.title {
+  width: 94%;
+  margin: 0.6rem;
+
+  font-size: 2rem;
+  color: var(--color-light-900) !important;
+  text-align: center;
+  text-align: right;
+}
+
+.tags,
+.text {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+.commentWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 100%;
+
+  background: linear-gradient(var(--color-dark-700) 60%, var(--color-primary-300) 300%);
+  border-radius: 0 0 0.3% 0.3%;
+  box-shadow: 0 7px 15px var(--color-dark-900);
+}
+
+.isDeleting {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--color-dark-100) !important;
+}
+
+.info > * {
+  display: flex;
+  align-items: center; /* Выровнять содержимое всех дочерних элементов по вертикали */
+  height: 40px; /* Убедитесь, что высота одинаковая */
+}
+
+@media (width <= 680px) {
+  .mainContainer {
+    padding-right: 1rem; /* Отступы справа */
+    padding-left: 1rem; /* Отступы слева */
+  }
+}

@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  padding-top: 110px;
+}
+
+@media (width <= 670px) {
+  .container {
+    padding-right: 1rem; /* Отступы справа */
+    padding-left: 1rem; /* Отступы слева */
+  }
+}

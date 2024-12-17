@@ -1,0 +1,125 @@
+.buttonWrap {
+  display: flex;
+  align-items: flex-start; /* Выровнять по верхнему краю */
+  justify-content: space-between; /* Кнопки справа */
+
+  .imageWrap {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px; /* Фиксированная ширина фото */
+    height: 200px; /* Фиксированная высота фото */
+    margin-right: 1rem; /* Отступ для текстового блока */
+
+    border-radius: 5% 3% 0.2%;
+    box-shadow: 0 2px 5px 3px var(--color-accent-900);
+
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03); /* Увеличение кнопки при наведении */
+      background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-primary-300) 93%);
+      border: 2px solid var(--color-accent-900);
+      box-shadow: 2px 1px 15px -4px var(--color-primary-200);
+    }
+
+    .imgprof {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .textContent {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Занять доступное пространство */
+    justify-content: space-between; /* Распределение текста */
+
+    .linkOff {
+      text-decoration: none;
+      transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05); /* Увеличение кнопки при наведении */
+      }
+    }
+
+    .userName {
+      overflow: hidden; /* Обрезаем лишний текст */
+
+      max-width: 15ch; /* Ограничиваем длину текста до 9 символов */
+      margin-top: 1.6rem;
+      margin-bottom: 0.21rem;
+
+      font-size: 1.6rem;
+      line-height: var(--line-height-l);
+      color: var(--color-light-900);
+      text-overflow: ellipsis; /* Добавляем многоточие */
+      white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+    }
+
+    .name {
+      font-size: 1.2rem;
+      color: var(--color-accent-900);
+    }
+
+    .smllbtns {
+      display: flex; /* Устанавливаем flex-контейнер */
+      flex-flow: column nowrap; /* Убираем перенос кнопок */
+      align-items: center; /* Центровка кнопок по вертикали */
+      justify-content: flex-end; /* Выравнивание кнопок по правому краю */
+    }
+
+    .saved,
+    .favorite {
+      pointer-events: auto; /* Гарантирует, что кнопки реагируют на клики */
+      position: relative;
+      z-index: 1; /* Убедитесь, что каждая кнопка на переднем плане */
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+@media (width <= 650px) {
+  .buttonWrap {
+    flex-direction: column; /* Смена на вертикальное расположение */
+    gap: 1rem; /* Отступ между блоками */
+    align-items: center; /* Центровка по горизонтали */
+
+    .imageWrap {
+      width: 150px;
+      height: 150px;
+      margin-right: 0; /* Убираем отступ */
+    }
+
+    .textContent {
+      align-items: center; /* Центровка текста */
+      max-width: 100%; /* Снять ограничение ширины */
+
+      .linkOff {
+        .userName {
+          margin: 0;
+          font-size: 1.3rem;
+          text-align: center;
+        }
+
+        .name {
+          display: none;
+        }
+      }
+
+      .smllbtns {
+        flex-flow: column nowrap;
+        flex-direction: row;
+        justify-content: center; /* Центровка кнопок */
+      }
+    }
+  }
+}

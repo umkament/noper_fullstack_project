@@ -1,0 +1,138 @@
+@import 'src/styles/mixins';
+
+.primary {
+  @include buttons;
+
+  font-size: var(--font-size-s);
+  box-shadow: 0 3px 5px 1px var(--color-accent-900);
+
+  &:active {
+    background-color: var(--color-accent-700);
+  }
+
+  &:hover {
+    color: var(--color-dark-500);
+    background-color: var(--color-accent-500);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-accent-900);
+  }
+
+  &:disabled {
+    background: var(--color-light-900);
+    box-shadow: none;
+  }
+}
+
+.secondary {
+  @include buttons;
+
+  font-size: var(--font-size-s);
+  background-color: var(--color-dark-100);
+  box-shadow: 0 3px 10px 0 var(--color-dark-900);
+
+  &:active {
+    background-color: var(--color-dark-700);
+  }
+
+  &:hover {
+    background-color: var(--color-dark-300);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-dark-100);
+  }
+
+  &:disabled {
+    background: var(--color-light-900);
+    box-shadow: none;
+  }
+}
+
+.tertiary {
+  @include buttons;
+
+  flex-shrink: 0;
+  font-size: var(--font-size-m);
+  background: transparent;
+  box-shadow: 0 2px 10px 3px var(--color-dark-900);
+
+  &:active {
+    box-shadow: 0 2px 10px 3px var(--color-accent-900);
+  }
+
+  &:hover {
+    background: linear-gradient(60deg, var(--color-dark-700) 60%, var(--color-accent-900) 333%);
+    box-shadow: 0 2px 10px 3px var(--color-accent-900);
+  }
+
+  &:focus {
+    outline: 1px solid var(--color-accent-700);
+  }
+
+  &:disabled {
+    background: var(--color-light-900);
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.link {
+  @include buttons;
+
+  font-size: var(--font-size-m);
+  color: var(--color-accent-500);
+  background: transparent;
+  border: none;
+
+  &:active {
+    color: var(--color-accent-700);
+  }
+
+  &:hover {
+    color: var(--color-accent-100);
+  }
+
+  &:focus {
+    padding: 2px 10px;
+    color: var(--color-primary-500);
+    border-radius: 8px;
+    outline: 2px solid var(--color-accent-100);
+  }
+
+  &:disabled {
+    color: var(--color-dark-300);
+  }
+}
+
+.icon {
+  @include buttons;
+
+  box-shadow: 0 3px 10px 0 var(--color-accent-900);
+
+  &:active {
+    background: var(--color-accent-700);
+    border: 1px solid var(--color-accent-500);
+  }
+
+  &:hover {
+    background: var(--color-dark-300);
+    border: 1px solid var(--color-accent-700);
+  }
+
+  &:focus {
+    outline: 1px solid var(--color-accent-700);
+  }
+
+  &:disabled {
+    background: var(--color-light-900);
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+  font-size: var(--font-size-s);
+}

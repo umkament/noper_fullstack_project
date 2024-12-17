@@ -1,0 +1,28 @@
+.avatarContainer {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.avatarContainer .avatar {
+  cursor: pointer;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  transform: scale(1.15);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.avatarWithNameWrapper {
+  cursor: pointer;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+.avatarWithNameWrapper .name {
+  color: var(--color-dark-100);
+  border-bottom: 2px double var(--color-dark-100);
+}/*# sourceMappingURL=avatar.module.css.map */

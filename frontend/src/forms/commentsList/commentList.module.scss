@@ -1,0 +1,100 @@
+.commcont {
+  position: relative;
+
+  display: flex;
+  gap: 1rem; /* Отступ между аватаркой и текстом */
+  align-items: flex-start; /* Элементы выравнены по верху */
+
+  margin: 1rem;
+}
+
+.commcont::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 0.1rem;
+
+  background: linear-gradient(90deg, var(--color-dark-600) -40%, var(--color-accent-900) 450%);
+  border-radius: 100%;
+}
+
+.avatar {
+  overflow: hidden; /* Обрезаем лишнее содержимое */
+  display: flex;
+  flex-shrink: 0; /* Запрещаем сжатие аватарки */
+  align-items: center;
+  justify-content: center;
+
+  width: 30px; /* Фиксированная ширина */
+  height: 30px; /* Фиксированная высота */
+
+  border-radius: 50%; /* Круглая форма */
+
+  img {
+    width: 100%; /* Изображение занимает всю ширину контейнера */
+    height: 100%; /* Изображение занимает всю высоту контейнера */
+    object-fit: cover; /* Сохранение пропорций изображения */
+  }
+}
+
+.username {
+  overflow: hidden; /* Обрезаем лишний текст */
+
+  max-width: 12ch; /* Ограничиваем длину текста до 9 символов */
+  margin: 0.4rem;
+
+  font-size: 0.9rem;
+  color: var(--color-accent-900);
+  text-overflow: ellipsis; /* Добавляем многоточие */
+  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+}
+
+.text {
+  flex-grow: 1; /* Текст занимает оставшееся пространство */
+
+  min-width: 0; /* Предотвращение переполнения flex-элементов */
+  margin: 0.4rem;
+  padding-left: 0.6rem;
+
+  font-size: 1.1rem;
+  color: var(--color-light-900);
+  word-break: break-word; /* Перенос длинных слов */
+}
+
+.favorite {
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03); /* Увеличение кнопки при наведении */
+  }
+}
+
+.delButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 1.5rem;
+  margin-left: auto;
+  padding: 0 0.4rem;
+
+  font-size: 1.2rem;
+}
+
+.nocomment {
+  display: flex;
+  justify-content: center;
+
+  margin: 1rem;
+
+  font-size: 1.1rem;
+  color: var(--color-light-900);
+}

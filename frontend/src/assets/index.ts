@@ -1,0 +1,5 @@
+export { default as errorImg } from './404.svg'
+export { default as NOPER } from './NOPER.png'
+export { default as NPlogo } from './NOPERlogo.png'
+export { default as avatar } from './avatar.png'
+export { default as userPhoto } from './userPhoto.jpeg'

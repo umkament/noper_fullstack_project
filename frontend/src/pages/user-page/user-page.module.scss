@@ -1,0 +1,255 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 6rem;
+  padding-top: 110px;
+}
+
+.infoBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (width <= 420px) {
+    flex-direction: column; /* Для более удобного отображения содержимого */
+    gap: 1rem; /* Добавляем расстояние между элементами */
+    align-items: center;
+    padding: 0 1rem;
+  }
+}
+
+.imgWrap {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 390px;
+  height: 400px;
+
+  border-radius: 22% 4% 0.8% 2%;
+  box-shadow: 0 4px 8px 10px var(--color-dark-900);
+
+  @media (width <= 840px) {
+    width: 300px;
+    height: 310px;
+  }
+
+  @media (width <= 730px) {
+    overflow: hidden;
+    flex-shrink: 0;
+
+    width: 150px; // Фиксируем размер для сбалансированного отображения
+    height: 150px;
+
+    border-radius: 50%; // Круглая форма для аватарки
+  }
+}
+
+.imgStyle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 390px;
+  height: 400px;
+  padding: 2.6rem;
+
+  border-radius: 4% 22% 2% 0.8%;
+  box-shadow: 0 4px 8px 10px var(--color-dark-900);
+
+  @media (width <= 840px) {
+    width: 300px;
+    height: 310px;
+  }
+
+  @media (width <= 730px) {
+    width: 75%;
+    height: auto;
+    border-radius: 4% 20% 2% 0.8%;
+  }
+
+  @media (width <= 420px) {
+    width: 80%;
+    height: auto;
+    box-shadow: none;
+  }
+}
+
+.username,
+.name,
+.description,
+.text,
+.btntext {
+  color: var(--color-light-100);
+}
+
+.username {
+  overflow: hidden; /* Обрезаем лишний текст */
+
+  max-width: 15ch; /* Ограничиваем длину текста до 9 символов */ /* Размер шрифта, как вам нужно */
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-l);
+  text-overflow: ellipsis; /* Добавляем многоточие */
+  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+
+  @media (width <= 730px) {
+    font-size: 1.4rem;
+  }
+}
+
+.name {
+  margin-top: 1rem;
+  font-size: var(--font-size-l);
+
+  @media (width <= 730px) {
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+    line-height: var(--line-height-s);
+  }
+}
+
+.description {
+  margin-top: 2rem;
+  padding: 0.6rem;
+
+  font-size: var(--font-size-m);
+  word-break: break-word; /* Перенос текста при необходимости */
+
+  //background: linear-gradient(40deg, var(--color-dark-300) 10%, var(--color-dark-900) 113%);
+  border-radius: 5px;
+  box-shadow: inset 0 3px 6px 2px var(--color-dark-500);
+
+  @media (width <= 730px) {
+    margin-top: 0;
+    padding: 0;
+
+    font-size: 0.9rem;
+    line-height: var(--line-height-s);
+
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.description.empty {
+  padding: 0;
+}
+
+.link {
+  margin-top: 3rem;
+
+  font-size: var(--font-size-s);
+  text-align: end;
+  text-wrap: balance;
+  word-break: break-word; /* Перенос слов по границам */
+  overflow-wrap: anywhere; /* Перенос длинных слов или ссылок */
+
+  @media (width <= 730px) {
+    font-size: 0.8rem;
+  }
+
+  @media (width <= 420px) {
+    margin-top: 1.5rem;
+  }
+}
+
+.btntext {
+  font-size: var(--font-size-s);
+}
+
+.postsBlock {
+  display: grid;
+  grid-gap: 0.4rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  max-width: 800px;
+  padding: 0.5rem;
+
+  background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-dark-700) 93%);
+  border-radius: 3px;
+  box-shadow: 5px 13px 10px var(--color-dark-900);
+
+  @media (width <= 730px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width <= 460px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.empty {
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.postImg {
+  cursor: pointer;
+
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+  border-radius: 0.8%;
+  box-shadow: -3px -3px 5px var(--color-dark-100);
+
+  transition:
+    transform 0.4s,
+    border 0.4s; /* Добавляем плавный переход для трансформации и обводки */
+
+  @media (width <= 730px) {
+    height: 400px;
+  }
+
+  @media (width <= 550px) {
+    height: 350px;
+  }
+
+  @media (width <= 460px) {
+    height: 450px;
+    margin-bottom: 2rem;
+  }
+
+  @media (width <= 370px) {
+    height: 500px;
+    margin-bottom: 2rem;
+  }
+}
+
+.postImg:hover {
+  transform: scale(1.04);
+  box-shadow: 2px 1px 15px -4px var(--color-accent-900);
+}
+
+.text {
+  width: 100%;
+  margin: auto;
+}
+
+@media (width <= 840px) {
+  .mainContainer {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+  }
+}
+
+@media (width <= 480px) {
+  .btntext {
+    display: none !important;
+  }
+}

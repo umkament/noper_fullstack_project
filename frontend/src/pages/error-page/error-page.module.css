@@ -1,0 +1,20 @@
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem;
+  text-decoration: none;
+}
+.errorContainer .errorImg {
+  max-width: 30rem;
+  max-height: 12rem;
+  margin-bottom: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.errorContainer .errorText {
+  margin-bottom: 2rem;
+}
+.errorContainer .errorLink {
+  text-decoration: none;
+}/*# sourceMappingURL=error-page.module.css.map */

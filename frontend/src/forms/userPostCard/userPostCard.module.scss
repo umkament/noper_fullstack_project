@@ -1,0 +1,165 @@
+.card {
+  overflow: hidden;
+  display: list-item;
+
+  height: auto;
+  max-height: 700px;
+  margin: 0;
+  padding: 0;
+
+  text-align: match-parent;
+
+  background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-accent-900) 93%);
+  border-radius: 0.3rem 1.5rem 0.2rem 0.2rem;
+  box-shadow: 5px 13px 10px var(--color-dark-900);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.003); /* Увеличение кнопки при наведении */
+    background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-primary-300) 93%);
+    box-shadow: 2px 1px 15px -4px var(--color-primary-200);
+  }
+
+  .linkoff {
+    text-decoration: none;
+
+    // .cardImg {
+    //   position: relative;
+
+    //   display: block;
+
+    //   width: 100%;
+    //   height: 65%;
+
+    //   object-fit: cover;
+    //   border: none;
+    //   border-radius: 13% 2% 0 0;
+
+    //   //box-shadow: 5px 11px 10px var(--color-dark-900);
+    //   box-shadow: 0 4px 8px 5px var(--color-dark-900);
+    // }
+    .cardImg {
+      position: relative;
+
+      display: block;
+
+      aspect-ratio: 16/9; /* Задает фиксированное соотношение сторон */
+      width: 100%;
+      height: auto;
+
+      object-fit: cover; /* Гарантирует правильное отображение содержимого */
+      border: none;
+      border-radius: 13% 2% 0 0;
+      box-shadow: 0 4px 8px 5px var(--color-dark-900);
+    }
+  }
+
+  .textWrap {
+    // display: flex;
+    // flex-direction: column;
+
+    // height: 35%;
+    // min-height: 180px;
+    // padding: 17px 20px 10px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределяет содержимое */
+
+    height: auto;
+    min-height: 200px; /* Фиксированная минимальная высота для текстового блока */
+    padding: 17px 20px 10px 25px;
+
+    .avaName {
+      display: flex;
+      align-items: end;
+
+      .userName {
+        overflow: hidden; /* Обрезаем лишний текст */
+
+        max-width: 15ch; /* Ограничиваем длину текста до 9 символов */
+        margin-left: 1rem;
+
+        font-size: 1.4rem;
+        color: var(--color-light-700);
+        text-overflow: ellipsis; /* Добавляем многоточие */
+        white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+      }
+    }
+
+    .title {
+      overflow: hidden; /* Скрыть текст, выходящий за границы */
+
+      /* Обрезка текста */
+      display: -webkit-box; /* Активация обрезки для нескольких строк */
+
+      max-height: calc(2 * 1.6rem); /* Высота двух строк (примерно) */
+      margin: 1rem;
+      padding: 0.4rem 1rem;
+
+      font-size: 1.3rem;
+      color: var(--color-accent-100);
+      text-align: center;
+      text-overflow: ellipsis; /* Добавить многоточие */
+
+      border-radius: 1% 1% 5% 5%;
+      box-shadow: 5px 13px 10px var(--color-dark-900);
+
+      -webkit-box-orient: vertical; /* Ориентация контейнера */
+      -webkit-line-clamp: 2; /* Максимум 2 строки */
+
+      /* Добавляем совместимость */
+      line-clamp: 2; /* Стандартное свойство (без префиксов) */
+    }
+  }
+
+  .wrapinfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    .date {
+      font-size: 1rem;
+      color: var(--color-light-700);
+    }
+
+    .whatcher {
+      display: flex;
+      margin: 1rem;
+
+      //margin: 0;
+
+      .centerview {
+        display: flex;
+        align-items: center;
+
+        margin-right: 1rem;
+
+        font-size: 1rem;
+        color: var(--color-light-700);
+
+        .eyeIcon {
+          margin-left: 0.2rem;
+        }
+
+        .viewsCount {
+          margin-top: 0.28rem;
+          margin-right: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+/* Адаптация для экранов 450px и меньше */
+@media (width <= 450px) {
+  .card .textWrap .title {
+    font-size: 1rem; /* Уменьшенный размер шрифта */
+  }
+}

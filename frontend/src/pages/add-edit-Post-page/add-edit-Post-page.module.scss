@@ -1,0 +1,184 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: auto;
+  margin-bottom: 4rem;
+  padding: 2rem 1rem; /* Увеличено для удобства на мобильных устройствах */
+  padding-top: 120px;
+
+  background: linear-gradient(60deg, var(--color-dark-900) 5%, var(--color-dark-700) 100%);
+  border-radius: 2%;
+  box-shadow: 10px 13px 10px var(--color-dark-900);
+}
+
+.illustrator {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 16 / 9; /* Устанавливаем пропорции для адаптивности */
+  width: 100%; /* Занимает всю ширину */
+  max-width: 800px; /* Ограничение ширины для больших экранов */
+  height: auto; /* Автоматическая высота */
+
+  background-position: center;
+  background-size: cover;
+  border: 0.1rem solid var(--color-dark-100);
+  border-radius: 5px;
+}
+
+// .illustrator img {
+//   display: none;
+// }
+
+.title,
+.tags {
+  width: 100%; /* Полная ширина */
+  max-width: 800px; /* Ограничение ширины */
+}
+
+.editor {
+  width: 100%;
+  max-width: 800px;
+
+  :global {
+    .cm-s-easymde {
+      font-size: 22px;
+      background: linear-gradient(60deg, var(--color-light-100) 5%, #efefef 150%);
+      border: 0;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .editor-toolbar {
+      color: black;
+      background: linear-gradient(90deg, #efefef 55%, var(--color-accent-500) 70%);
+      border: 0;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .editor-toolbar button {
+      min-width: 2.5rem; /* Устанавливаем минимальную ширину кнопок */
+      margin: 0 0.1rem 0.3rem 0;
+      padding: 0.3rem;
+
+      color: var(--color-accent-100);
+
+      background-color: var(--color-dark-500); /* Цвет кнопок */
+      border: 1px solid var(--color-accent-100);
+      border-radius: 0.1rem;
+
+      transition: background-color 0.3s ease; /* Анимация при наведении */
+    }
+
+    .editor-toolbar button:hover {
+      color: var(--color-dark-500);
+      background-color: var(--color-primary-200);
+    }
+  }
+}
+
+.markdown {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.markdown pre {
+  padding: 1rem;
+
+  font-family: 'Courier New', Courier, monospace;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.markdown code {
+  padding: 0.2rem 0.4rem;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+}
+
+.markdown ul {
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+
+.markdown ol {
+  margin-left: 2rem;
+  list-style-type: decimal;
+}
+
+.markdown blockquote {
+  padding-left: 1rem;
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ccc;
+}
+
+.previewWrap {
+  width: 100%; /* Полная ширина */
+  max-width: 800px; /* Ограничение ширины */
+  margin-top: 2rem;
+}
+
+.previewTitle {
+  color: var(--color-light-900);
+}
+
+.previewContent {
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+
+  padding: 1rem;
+
+  color: var(--color-light-900);
+  word-wrap: break-word; /* Предотвращает выход слов за пределы */
+  overflow-wrap: break-word; /* Альтернативная поддержка для переноса текста */
+
+  background: linear-gradient(var(--color-dark-700) 50%, var(--color-accent-700) 450%);
+  border: 0.1rem solid var(--color-dark-100);
+  border-radius: 0.1rem;
+  box-shadow: 0 4px 8px 5px var(--color-dark-900);
+}
+
+@media (width <= 768px) {
+  .container {
+    margin-bottom: 4rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .illustrator {
+    aspect-ratio: 4 / 3; /* Пропорции для планшетов */
+    height: auto;
+  }
+
+  .previewWrap {
+    max-width: 100%; /* На планшетах и мобильных — полная ширина */
+  }
+}
+
+@media (width <= 460px) {
+  .container {
+    gap: 1rem; /* Уменьшаем промежутки между элементами */
+  }
+
+  .illustrator {
+    aspect-ratio: 1 / 1; /* Пропорции для маленьких экранов */
+  }
+
+  .previewContent {
+    padding: 0.5rem; /* Уменьшаем внутренние отступы */
+    font-size: 14px; /* Меньше шрифт для мобильных устройств */
+  }
+}

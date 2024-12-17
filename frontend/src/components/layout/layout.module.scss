@@ -1,0 +1,96 @@
+.header_body {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 0.6rem;
+
+  background-color: var(--color-dark-700);
+  border-bottom: 1.5px solid var(--color-dark-500);
+
+  .logo {
+    position: relative;
+    z-index: 78;
+    height: 90px;
+    margin-right: 0.3rem;
+
+    // border-radius: 50%;
+    // box-shadow: -5px 3px 10px var(--color-dark-300);
+  }
+
+  .header_nav {
+    flex: auto;
+
+    .list_menu {
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: row;
+
+      font-family: var(--font-family-second);
+      list-style: none;
+
+      .linkOff {
+        margin-right: 3%;
+        text-decoration: none;
+
+        .list_item {
+          display: flex;
+          align-items: center;
+          color: var(--color-light-700);
+        }
+      }
+    }
+  }
+}
+
+.my_page {
+  cursor: pointer;
+}
+
+.icons {
+  margin-right: 0.5rem;
+}
+
+.name {
+  overflow: hidden; /* Обрезаем лишний текст */
+
+  max-width: 9ch; /* Ограничиваем длину текста до 9 символов */
+
+  font-size: var(--font-size-m); /* Размер шрифта, как вам нужно */
+  color: var(--color-light-700); /* Цвет текста */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+}
+
+@media (width <= 780px) {
+  .text {
+    display: none;
+  }
+
+  .icons {
+    margin: 0 auto;
+  }
+}
+
+@media (width <= 488px) {
+  .textLogOut {
+    display: none;
+  }
+
+  .iconDoor {
+    size: 2rem;
+    margin: 0 auto;
+  }
+}
+
+@media (width <= 480px) {
+  .name {
+    display: none;
+  }
+}

@@ -1,0 +1,226 @@
+// .savedPage {
+//   display: flex; /* Горизонтальная раскладка */
+//   gap: 40px; /* Расстояние между столбцами */
+//   justify-content: center; /* Центрирование столбцов по горизонтали */
+
+//   margin-top: 120px; /* Отступ сверху */
+//   padding: 0 20px; /* Внутренние отступы для мобильных устройств */
+// }
+
+// .savedUsers {
+//   flex: none;
+
+//   width: auto; /* Равномерное распределение ширины между столбцами */
+//   max-width: 100%; /* Ограничение максимальной ширины для каждого столбца */
+//   padding: 20px; /* Внутренний отступ */
+
+//   background: var(--color-dark-500); /* Легкий фон для секций */
+//   border-radius: 0.8rem; /* Закругленные края */
+//   box-shadow: 0 4px 6px var(--color-dark-900); /* Легкая тень */
+// }
+
+// .savedPosts {
+//   flex: 1;
+
+//   max-width: 500px;
+//   padding: 20px;
+
+//   background: var(--color-dark-500);
+//   border-radius: 0.8rem;
+//   box-shadow: 0 4px 6px var(--color-dark-900);
+// }
+
+// .title {
+//   margin-bottom: 20px;
+//   color: var(--color-light-900);
+//   text-align: center; /* Центрирование заголовков */
+// }
+
+// ul {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+// }
+
+// .userItem,
+// .postItem {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between; /* Разделяем кнопку и информацию */
+
+//   padding: 10px;
+
+//   border-bottom: 0.07rem solid var(--color-dark-700); /* Разделитель */
+// }
+
+// .userItem:last-child {
+//   border-bottom: none; /* Убираем линию у последнего элемента */
+// }
+
+// .postItem:last-child {
+//   border-bottom: none; /* Убираем линию у последнего элемента */
+// }
+
+// .toggleBtn {
+//   cursor: pointer;
+
+//   padding: 5px 10px;
+
+//   font-size: 0.9em;
+//   color: var(--color-light-900);
+
+//   border: none;
+//   border-radius: 5px;
+
+//   transition: background-color 0.3s ease;
+
+//   &:hover {
+//     background-color: var(--color-accent-100);
+//   }
+
+//   &:disabled {
+//     cursor: not-allowed;
+//     background-color: var(--color-dark-100);
+//   }
+// }
+
+// .userInfo,
+// .postInfo {
+//   display: flex;
+
+//   margin: 0.3rem;
+
+//   font-size: 1.1rem;
+//   color: var(--color-accent-100);
+//   text-align: left;
+// }
+
+// .postInfo {
+//   display: block;
+//   flex: 1;
+//   width: 100%; /* Занимает всю ширину */
+//   text-align: right; /* Выравнивание по правому краю */
+// }
+
+.savedPage {
+  display: flex;
+  gap: 20px; /* Расстояние между колонками */
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  /* Контроль ширины колонок */
+  max-width: 100%;
+  margin-top: 120px;
+  padding: 0 20px;
+}
+
+.savedUsers,
+.savedPosts {
+  /* Если места мало, равномерное сжатие */
+  overflow: hidden;
+  flex: 1 1 50%; /* Равномерное распределение ширины */
+
+  min-width: 300px; /* Минимальная ширина колонок */
+  max-width: 500px; /* Ограничение максимальной ширины */
+  padding: 20px;
+
+  background: var(--color-dark-500);
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 6px var(--color-dark-900);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: clamp(1.2rem, 2.5vw, 2rem); /* Адаптивный размер заголовков */
+  color: var(--color-light-900);
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.userItem,
+.postItem {
+  display: flex;
+  gap: 10px; /* Расстояние между текстом и кнопкой */
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+
+  border-bottom: 0.07rem solid var(--color-dark-700);
+}
+
+.userItem:last-child,
+.postItem:last-child {
+  border-bottom: none;
+}
+
+.toggleBtn {
+  cursor: pointer;
+
+  padding: 5px 10px;
+
+  font-size: 0.9em;
+  color: var(--color-light-900);
+
+  border: none;
+  border-radius: 5px;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-accent-100);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--color-dark-100);
+  }
+}
+
+.userInfo,
+.postInfo {
+  overflow: hidden; /* Скрывать лишний текст */
+  flex: 1;
+
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Адаптивный размер текста */
+  color: var(--color-accent-100);
+  text-overflow: ellipsis; /* Добавить многоточие */
+  white-space: nowrap; /* Не переносить текст */
+}
+
+.postInfo {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+/* Для маленьких экранов */
+@media (width <= 768px) {
+  .savedUsers,
+  .savedPosts {
+    flex: 1 1 calc(50% - 20px); /* Равномерное сжатие при маленькой ширине */
+  }
+
+  .title {
+    font-size: 1.5rem; /* Уменьшенный заголовок */
+  }
+}
+
+@media (width <= 650px) {
+  .savedPage {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .savedUsers,
+  .savedPosts {
+    width: auto; /* Занимают всю ширину родителя */
+    max-width: 300px; /* Ограничение ширины колонок */
+  }
+}

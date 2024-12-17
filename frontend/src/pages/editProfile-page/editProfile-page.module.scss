@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  margin: auto;
+  margin-bottom: 6rem;
+  padding-top: 110px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 600px;
+  height: auto;
+  margin-top: 7rem;
+  padding: 1.4rem;
+
+  background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-accent-900) 93%);
+  border: 0.2rem solid var(--color-dark-500);
+  border-radius: 2%;
+  box-shadow: 5px 13px 10px var(--color-dark-900);
+
+  @media (width <= 640px) {
+    width: calc(100% - 4rem); /* Отступы справа и слева */
+  }
+}
+
+.logo {
+  width: 60%;
+  border-radius: 1%;
+  box-shadow: 10px 11px 9px var(--color-dark-900);
+}
+
+.text {
+  margin: 2rem 1rem 1rem;
+
+  font-size: 1.4rem;
+  line-height: var(--line-height-m);
+  color: var(--color-light-900);
+  text-align: center;
+}
+
+.inputStyle {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.textareaStyle {
+  width: 100%;
+}
+
+.buttonStyle {
+  width: 60%;
+  margin: 1rem;
+
+  @media (width <= 441px) {
+    width: 45%;
+  }
+}
+
+.btnText {
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-m);
+  color: var(--color-light-900);
+
+  &:hover {
+    color: var(--color-dark-500);
+  }
+
+  @media (width <= 441px) {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-s);
+  }
+}
+
+.btnStyle {
+  width: 40%;
+  margin-top: 0.8rem;
+}
+
+.saveBtn {
+  display: flex;
+  margin: auto;
+  margin-top: 0.8rem;
+}
+
+.addAvatarWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.avatarStyle {
+  width: 30%;
+  border-radius: 4%;
+}
+
+.pointer {
+  color: var(--color-light-900);
+}

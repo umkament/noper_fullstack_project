@@ -1,0 +1,6 @@
+.saved {
+  pointer-events: auto; /* Гарантирует, что кнопки реагируют на клики */
+  position: relative;
+  z-index: 1; /* Убедитесь, что каждая кнопка на переднем плане */
+  margin: 0.5rem;
+}

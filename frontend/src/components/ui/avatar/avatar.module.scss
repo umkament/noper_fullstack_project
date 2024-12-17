@@ -1,0 +1,75 @@
+// .avatarContainer {
+//   position: relative;
+
+//   overflow: hidden;
+//   display: flex;
+
+//   width: 30px; // Ширина контейнера аватара
+//   height: 30px; // Высота контейнера аватара
+
+//   border-radius: 50%; // Создаем круглую форму контейнера
+//   .avatar {
+//     cursor: pointer;
+//     position: absolute;
+
+//     // top: -10%;
+//     // left: -10%;
+//     //transform: scale(1.15); // изменение масштаба картинки
+
+//     object-fit: cover;
+
+//     img.avatar {
+//       max-width: 100%; /* Уменьшаем изображение, если оно больше контейнера */
+//       max-height: 100%;
+//       object-fit: cover;
+//     }
+//   }
+// }
+
+// .avatarWithNameWrapper {
+//   cursor: pointer;
+//   display: flex;
+//   gap: 0.35rem;
+//   align-items: center;
+
+//   .name {
+//     color: var(--color-dark-500);
+//     border-bottom: 2px double var(--color-dark-500);
+//   }
+// }
+
+.avatarContainer {
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+
+  width: 30px; /* Фиксированная ширина контейнера */
+  height: 30px; /* Фиксированная высота контейнера */
+
+  border-radius: 50%; /* Круглая форма */
+
+  .avatar {
+    cursor: pointer;
+
+    position: relative; /* Меняем на relative, чтобы не выходить за границы */
+
+    width: 100%; /* Ширина аватарки соответствует контейнеру */
+    height: 100%; /* Высота аватарки соответствует контейнеру */
+
+    object-fit: cover; /* Устанавливаем пропорции изображения */
+  }
+}
+
+.avatarWithNameWrapper {
+  cursor: pointer;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+
+  .name {
+    color: var(--color-dark-500);
+    border-bottom: 2px double var(--color-dark-500);
+  }
+}

@@ -1,0 +1,68 @@
+.container {
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+
+  width: 100%;
+  max-width: 840px;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  padding-top: 110px;
+
+  @media (width <= 880px) {
+    width: calc(100% - 4rem); /* Отступы справа и слева */
+  }
+}
+
+.card {
+  overflow: hidden;
+  display: list-item;
+
+  height: auto;
+  max-height: 700px;
+  margin: 0;
+  padding: 1rem 1.5rem; /* Добавлено для увеличения отступов внутри карты */
+
+  text-align: left;
+
+  background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-accent-900) 93%);
+  border-radius: 0.3rem 1.5rem 0.2rem 0.2rem;
+  box-shadow: 5px 13px 10px var(--color-dark-900);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.003); /* Увеличение при наведении */
+    background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-primary-300) 93%);
+    box-shadow: 2px 1px 15px -4px var(--color-primary-200);
+  }
+}
+
+.text {
+  margin-bottom: 1rem; /* Разделение абзацев */
+  font-size: 1rem; /* Удобный размер текста */
+  line-height: 1.8; /* Увеличенный межстрочный интервал */
+  color: var(--color-light-100); /* Светлый текст для читаемости */
+}
+
+.text strong {
+  color: var(--color-primary-300); /* Выделение важных слов */
+}
+
+.text em {
+  font-style: italic;
+  color: var(--color-accent-300); /* Эффект для ключевых фраз */
+}
+
+.logo {
+  display: block; /* Чтобы margin работал корректно */
+
+  width: 40%; /* Уменьшенный размер логотипа */
+  margin: 0 auto; /* Центрирование по горизонтали */
+
+  border-radius: 0.5rem; /* Округленные углы */
+  box-shadow: 5px 5px 15px var(--color-dark-900);
+}

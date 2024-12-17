@@ -1,0 +1,26 @@
+@mixin buttons() {
+  all: unset;
+
+  cursor: pointer;
+
+  top: 20px;
+
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 10px;
+
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
+  color: var(--color-light-100);
+
+  border-radius: 8px;
+}
+
+@mixin typography() {
+  margin: 0;
+  background: transparent;
+}

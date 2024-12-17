@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  margin: auto;
+  margin-bottom: 6rem;
+  padding-top: 110px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 360px;
+  height: 1000px;
+  margin-top: 7rem;
+  padding: 1.4rem;
+
+  background: linear-gradient(60deg, var(--color-dark-500) 50%, var(--color-accent-900) 93%);
+  border: 0.2rem solid var(--color-dark-500);
+  border-radius: 2%;
+  box-shadow: 5px 13px 10px var(--color-dark-900);
+
+  @media (width <= 440px) {
+    width: calc(100% - 4rem); /* Отступы справа и слева */
+  }
+}
+
+.formWrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 60%;
+  border-radius: 1%;
+  box-shadow: 10px 11px 9px var(--color-dark-900);
+}
+
+.text {
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: var(--color-light-900);
+  text-align: center;
+}
+
+.inputStyle {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.btnStyle {
+  width: auto;
+  margin-top: 1rem;
+}
+
+.pointer {
+  color: var(--color-light-900);
+}
+
+.exitWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

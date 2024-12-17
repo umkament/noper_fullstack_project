@@ -1,0 +1,112 @@
+.label {
+  color: var(--color-dark-100);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputWrapper .searchIcon {
+  all: unset;
+
+  position: absolute;
+  top: 7px;
+  left: 10px;
+
+  width: 1.5rem;
+}
+
+.inputWrapper .eyeIcon {
+  position: absolute;
+}
+
+.inputWrapper .xMarkIcon {
+  position: absolute;
+}
+
+.inputWrapper input {
+  all: unset;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 36px;
+  padding-left: 15px;
+
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.inputWrapper input[type="search"] {
+  padding-left: 40px;
+}
+
+.inputWrapper .default {
+  color: var(--color-dark-500);
+
+  appearance: none;
+  appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--color-accent-100);
+}
+
+.inputWrapper .default:active {
+  color: var(--color-accent-500);
+  border: 2px solid var(--color-accent-500);
+}
+
+.inputWrapper .default:hover {
+  background: var(--color-light-700);
+}
+
+.inputWrapper .default:disabled {
+  color: var(--color-light-900);
+  background: transparent;
+  border: 1px solid var(--color-light-700);
+}
+
+.inputWrapper .default:disabled::placeholder {
+  color: var(--color-light-900);
+}
+
+.inputWrapper .default:disabled::placeholder {
+  color: var(--color-light-900);
+}
+
+.inputWrapper .default:focus {
+  outline: 2.2px solid var(--color-light-900);
+}
+
+.inputWrapper .error {
+  color: var(--color-danger-300);
+  border: 1.5px solid var(--color-danger-300);
+}
+
+.searchIcon:has(~ .default:active) {
+  color: var(--color-light-100);
+}
+
+.errorMessage {
+  margin-top: 2px;
+  padding-left: 15px;
+  font-size: 14px;
+  color: var(--color-danger-300);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background: linear-gradient(top, rgb(255 255 255 / 0%) 0%, rgb(0 174 255 / 4%) 50%, rgb(255 255 255 / 0%) 51%, rgb(0 174 255 / 3%) 100%);
+  border: 0;
+  box-shadow: 0 0 0 1000px transparent inset;
+
+  transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+
+  -webkit-text-fill-color: var(--color-dark-100);
+}
