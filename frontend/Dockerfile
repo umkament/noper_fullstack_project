@@ -6,6 +6,9 @@ FROM node:alpine as build
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
+# Устанавливаем pnpm
+RUN npm install -g pnpm
+
 # Копируем package.json и устанавливаем зависимости
 COPY package*.json ./
 RUN pnpm install
