@@ -18,9 +18,6 @@ services:
     build: 
       context: ./backend
       dockerfile: Dockerfile
-    environment:
-      - NODE_ENV=production
-      - MONGODB_URI=${MONGODB_URI}
     expose:
       - "4411"  # Открыт для взаимодействия между контейнерами
     networks:
