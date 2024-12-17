@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 4411
 
 # Запуск бэкенда
-CMD ["npm", "start:dev"]
+CMD ["npm", "start"]
