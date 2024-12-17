@@ -17,11 +17,13 @@ services:
   backend:
     build: 
       context: ./backend
+      dockerfile: Dockerfile
     networks:
       - noper
 
   frontend:
     build: 
       context: ./frontend
+      dockerfile: Dockerfile
     networks:
       - noper
