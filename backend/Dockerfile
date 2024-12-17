@@ -4,7 +4,7 @@
 FROM node:16
 
 # Устанавливаем рабочую директорию
-# WORKDIR /app
+WORKDIR /app
 
 # Копируем package.json и устанавливаем зависимости
 COPY package*.json ./
