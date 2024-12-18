@@ -5,7 +5,7 @@
 // }
 
 .buttonTrigger {
-  @include buttons;
+  @include mixins.buttons;
 
   font-family: var(--font-family-second);
 
