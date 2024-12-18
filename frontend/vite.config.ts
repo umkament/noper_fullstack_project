@@ -11,6 +11,11 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
   },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2015',
+    },
+  },
   plugins: [react()],
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
