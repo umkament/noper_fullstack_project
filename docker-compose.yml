@@ -1,40 +1,5 @@
 networks:
-  noper:
-
-# services:
-#   nginx:
-#     image: nginx:stable-alpine
-#     ports:
-#       - "80:80"
-#     volumes:
-#       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-#     depends_on:
-#       - backend
-#       - frontend
-#     networks:
-#       - noper
-
-#   backend:
-#     build: 
-#       context: ./backend
-#       dockerfile: Dockerfile
-#     expose:
-#       - "4411"  # Открыт для взаимодействия между контейнерами
-#     networks:
-#       - noper
-#     env_file:
-#       - ./backend/.env 
-
-#   frontend:
-#     build: 
-#       context: ./frontend
-#       dockerfile: Dockerfile
-#     expose:
-#       - "80"  # Открыт для взаимодействия с Nginx
-#     networks:
-#       - noper
-#     env_file:
-#       - ./frontend/.env 
+  dev:
 
 services:
   nginx:
@@ -42,12 +7,12 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - backend
       - frontend
     networks:
-      - noper
+      - dev
 
   backend:
     build: 
@@ -55,8 +20,10 @@ services:
       dockerfile: Dockerfile
     expose:
       - "4411"
+      env_file:
+      - ./backend/.env
     networks:
-      - noper
+      - dev
 
   frontend:
     build: 
@@ -64,7 +31,8 @@ services:
       dockerfile: Dockerfile
     expose:
       - "5173"
-    networks:
-      - noper
-    env_file:
+       env_file:
       - ./frontend/.env
+    networks:
+      - dev
+   
