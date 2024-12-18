@@ -10,7 +10,8 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # Копируем package.json и устанавливаем зависимости
-COPY package*.json ./
+#COPY package*.json ./
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 
 # Копируем все файлы проекта
@@ -19,6 +20,7 @@ RUN pnpm build
 
 # Stage 2: Nginx
 FROM nginx:stable-alpine
+# FROM nginx:1.26
 
 # Копируем собранный фронтенд
 COPY --from=build /app/dist /usr/share/nginx/html
