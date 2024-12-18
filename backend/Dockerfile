@@ -1,7 +1,8 @@
 # backend Dockerfile
 
 # Используем Node.js образ
-FROM node:16
+FROM node:20
+WORKDIR /app 
 
 # Копируем package.json и устанавливаем зависимости
 COPY package*.json ./
@@ -10,7 +11,7 @@ RUN npm install
 # Копируем все файлы проекта
 COPY . .
 
-# EXPOSE 4411
+EXPOSE 4411
 
 # Запуск бэкенда
 CMD ["npm", "start"]

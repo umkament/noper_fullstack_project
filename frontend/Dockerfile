@@ -1,10 +1,12 @@
 # frontend Dockerfile
 
 # Используем Node.js образ
-FROM node:alpine as build 
+FROM node:16 as build 
+
+WORKDIR /app
 
 
-COPY package.json pnpm-lock.yaml ./
+COPY package*.json ./
 RUN npm install
 
 # Копируем все файлы проекта
@@ -14,11 +16,9 @@ RUN npm run build
 FROM nginx:stable-alpine
 
 # Копируем собранный фронтенд
-COPY --from=build /dist /usr/share/nginx/html
-
+COPY --from=build /app/build /usr/share/nginx/html
 # Копируем конфигурацию Nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 5173
   
 # Запуск фронтенда
 CMD ["nginx", "-g", "daemon off;"]

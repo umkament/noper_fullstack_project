@@ -1,3 +1,4 @@
+version: '3 '
 networks:
   dev:
 
@@ -15,11 +16,13 @@ services:
       - dev
 
   backend:
-    build: 
+    build:  
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: ./backend/Dockerfile
     expose:
       - "4411:4411"
+    depends_on:
+      - db 
     env_file:
       - ./backend/.env
     networks:
@@ -28,7 +31,7 @@ services:
   frontend:
     build: 
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: ./frontend/Dockerfile
     expose:
       - "5173:5173"
     env_file:
