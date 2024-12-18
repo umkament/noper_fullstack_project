@@ -10,9 +10,6 @@ export default defineConfig({
     chunkSizeWarningLimit: 3000,
     cssCodeSplit: true,
     outDir: 'dist',
-    rollupOptions: {
-      maxParallelFileOps: 2,
-    },
     sourcemap: true,
   },
   optimizeDeps: {
