@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile
     expose:
       - "4411"
-      env_file:
+    env_file:
       - ./backend/.env
     networks:
       - dev
@@ -31,7 +31,7 @@ services:
       dockerfile: Dockerfile
     expose:
       - "5173"
-       env_file:
+    env_file:
       - ./frontend/.env
     networks:
       - dev
