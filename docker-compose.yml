@@ -63,7 +63,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     expose:
-      - "80"
+      - "5173"
     networks:
       - noper
     env_file:
