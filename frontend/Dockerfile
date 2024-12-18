@@ -1,5 +1,5 @@
 # Используем Node.js образ
-FROM node:18 AS build
+FROM node:18-alpine AS build
 
 # Устанавливаем pnpm
 RUN npm install -g pnpm

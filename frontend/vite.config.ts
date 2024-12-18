@@ -7,10 +7,12 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/noper_app_front/',
   build: {
-    chunkSizeWarningLimit: 3000,
+    chunkSizeWarningLimit: 3000, //лимит для чанков
     cssCodeSplit: true,
+    minify: 'terser', // включаем минификацию, если это еще не сделано
     outDir: 'dist',
     sourcemap: true,
+    target: 'esnext', // используем более оптимизированный target
   },
   optimizeDeps: {
     esbuildOptions: {
