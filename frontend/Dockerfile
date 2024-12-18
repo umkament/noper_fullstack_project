@@ -15,7 +15,7 @@ RUN pnpm install
 
 # Копируем все файлы проекта
 COPY . .
-ENV NODE_OPTIONS="--max-old-space-size=4096"
+# ENV NODE_OPTIONS="--max-old-space-size=4096"
 # Собираем проект
 RUN pnpm run build
 
