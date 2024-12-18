@@ -1,4 +1,4 @@
-@import 'src/styles/mixins';
+@use 'src/styles/mixins';
 
 .primary {
   @include buttons;

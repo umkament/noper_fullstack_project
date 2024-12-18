@@ -1,7 +1,7 @@
 # frontend Dockerfile
 
 # Используем Node.js образ
-FROM node:16 as build 
+FROM node:16 AS build 
 
 WORKDIR /app
 
@@ -11,6 +11,7 @@ RUN npm install
 
 # Копируем все файлы проекта
 COPY . .
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN npm run build
 
 FROM nginx:stable-alpine
