@@ -8,7 +8,11 @@ export default defineConfig({
   base: '/noper_app_front/',
   build: {
     chunkSizeWarningLimit: 3000,
+    cssCodeSplit: true,
     outDir: 'dist',
+    rollupOptions: {
+      maxParallelFileOps: 2,
+    },
     sourcemap: true,
   },
   optimizeDeps: {

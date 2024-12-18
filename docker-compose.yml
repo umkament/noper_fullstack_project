@@ -29,6 +29,10 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ./frontend/.env
+    deploy:
+      resourses: 
+        limits:
+          memory: 4g
     networks:
       - dev
    
