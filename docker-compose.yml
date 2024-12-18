@@ -18,7 +18,7 @@ services:
   backend:
     build:  
       context: ./backend
-      dockerfile: ./backend/Dockerfile
+      dockerfile: Dockerfile
     expose:
       - "4411:4411"
     env_file:
@@ -29,7 +29,7 @@ services:
   frontend:
     build: 
       context: ./frontend
-      dockerfile: ./frontend/Dockerfile
+      dockerfile: Dockerfile
     expose:
       - "5173:5173"
     env_file:
