@@ -18,7 +18,7 @@ COPY --from=build /dist /usr/share/nginx/html
 
 # Копируем конфигурацию Nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 3000
+EXPOSE 5173
   
 # Запуск фронтенда
 CMD ["nginx", "-g", "daemon off;"]

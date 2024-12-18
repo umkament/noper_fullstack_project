@@ -14,8 +14,4 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
-  server: {
-    host: '0.0.0.0', // Это нужно для того, чтобы сервер Vite был доступен из контейнеров Docker
-    port: 3000, // Убедитесь, что порт совпадает с тем, что указан в конфигурации Nginx
-  },
 })
