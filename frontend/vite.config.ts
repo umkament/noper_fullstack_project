@@ -16,7 +16,11 @@ export default defineConfig({
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
   server: {
-    host: '0.0.0.0', // Ожидание подключения на всех интерфейсах
-    port: 5173, // Порт, на котором приложение будет работать
+    host: true,
+    port: 3000, // Порт, на котором приложение будет работать
+    strictPort: true,
+    watch: {
+      usePolling: true,
+    },
   },
 })

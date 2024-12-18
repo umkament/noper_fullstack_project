@@ -1,7 +1,7 @@
 # backend Dockerfile
 
 # Используем Node.js образ
-FROM node:20
+FROM node:18
 WORKDIR /app 
 
 # Копируем package.json и устанавливаем зависимости

@@ -11,7 +11,6 @@ RUN npm install
 
 # Копируем все файлы проекта
 COPY . .
-ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN npm run build
 
 FROM nginx:stable-alpine
