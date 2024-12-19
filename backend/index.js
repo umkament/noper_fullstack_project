@@ -59,7 +59,6 @@ const corsOptions = {
   origin: [
     'http://localhost:5173', 
     'http://84.201.184.120',
-    'https://umkament.github.io/noper_app_front/'
   ], // Допустимые источники
   credentials: true, // Разрешить отправку куков и токенов
   methods: 'GET,POST,PUT,DELETE,PATCH',
@@ -138,10 +137,6 @@ app.post('/saved/toggle', checkAuth, toggleSavedItem);
 
 
 
-//следующий код запускает непосредственно веб-сервер
-// функция listen первым параметром принимает порт, а вторым (необязательным) функцию, в которой
-// мы говорим: если наш сервер не смог запуститься, то мы вернем об этом сообщение
-// если ошибки нет, то функция вернет сообщение 'server ok'
 
 app.listen(PORT, '0.0.0.0', (err) => {
   if (err) {
