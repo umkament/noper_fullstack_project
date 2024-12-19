@@ -9,8 +9,7 @@ services:
     # volumes:
     #   - ./nginx.conf:/etc/nginx/nginx.conf
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf    # Подключаем ваш nginx конфиг
-      - ./frontend/dist:/usr/share/nginx/html  # Монтируем директорию с собранным фронтендом
+      - ./nginx.conf:/etc/nginx/nginx.conf    # Подключаем nginx конфиг
     depends_on:
       - backend
       - frontend
