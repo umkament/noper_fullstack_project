@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 //import vitePluginSass from 'vite-plugin-sass'
 
 export default defineConfig({
-  base: '/noper_app_front/',
+  base: '/',
   build: {
     chunkSizeWarningLimit: 3000, //лимит для чанков
     cssCodeSplit: true,
@@ -25,7 +25,6 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port: 3000, 
     strictPort: true,
     watch: {
       usePolling: true,
