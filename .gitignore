@@ -4,7 +4,15 @@
 # Dependencies
 node_modules/
 venv/
+dist/
+build/
 
 # Environment files
 .env
 
+# Файлы автосохранения и временные файлы
+#*
+# IDE и редакторы
+.idea/
+.vscode/
+*.code-workspace

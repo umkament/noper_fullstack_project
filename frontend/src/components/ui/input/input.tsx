@@ -1,6 +1,5 @@
 import { ChangeEvent, ComponentPropsWithoutRef, forwardRef, useState } from 'react'
 
-import { Typography } from '@/components/ui/typography'
 import { FaXmark } from 'react-icons/fa6'
 import { FcSearch } from 'react-icons/fc'
 import { PiEyeClosedDuotone, PiEyeDuotone } from 'react-icons/pi'
@@ -8,6 +7,7 @@ import { PiEyeClosedDuotone, PiEyeDuotone } from 'react-icons/pi'
 import s from './input.module.scss'
 
 import { Button } from '../button'
+import { Typography } from '../typography'
 
 export type InputProps = {
   className?: string
