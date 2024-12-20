@@ -5,29 +5,13 @@ import { defineConfig } from 'vite'
 //import vitePluginSass from 'vite-plugin-sass'
 
 export default defineConfig({
-  base: '/',
+  base: '/noper_app_front/',
   build: {
-    chunkSizeWarningLimit: 3000, //лимит для чанков
-    cssCodeSplit: true,
-    minify: 'terser', // включаем минификацию, если это еще не сделано
     outDir: 'dist',
-    sourcemap: true,
-    target: 'esnext', // используем более оптимизированный target
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      target: 'es2015',
-    },
+    chunkSizeWarningLimit: 3000, 
   },
   plugins: [react()],
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
-  },
-  server: {
-    host: true,
-    strictPort: true,
-    watch: {
-      usePolling: true,
-    },
   },
 })

@@ -1,0 +1,77 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
+import { Link } from 'react-router-dom'
+
+import { RxCamera } from 'react-icons/rx'
+
+import { Button } from './'
+
+const meta = {
+  argTypes: {
+    variant: {
+      control: { type: 'radio' },
+      options: ['primary', 'secondary', 'tertiary', 'link'],
+    },
+  },
+  component: Button,
+  tags: ['autodocs'],
+  title: 'Components/Button',
+} satisfies Meta<typeof Button>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Primary: Story = {
+  args: {
+    children: 'Primary Button',
+    disabled: false,
+    variant: 'primary',
+  },
+}
+
+export const Secondary: Story = {
+  args: {
+    children: 'Secondary Button',
+    disabled: false,
+    variant: 'secondary',
+  },
+}
+export const Tertiary: Story = {
+  args: {
+    children: 'Tertiary Button',
+    disabled: false,
+    variant: 'tertiary',
+  },
+}
+export const ButtonAsLink: Story = {
+  args: {
+    children: 'Tertiary Button',
+    disabled: false,
+    variant: 'link',
+  },
+}
+
+export const LinkAsButton: Story = {
+  args: {
+    as: Link,
+    children: 'look like a button',
+    href: '',
+    variant: 'primary',
+  },
+}
+
+export const IconButton: Story = {
+  args: {
+    children: <RxCamera />,
+    variant: 'tertiary',
+  },
+}
+
+export const FullWidth: Story = {
+  args: {
+    children: 'Full Width Button',
+    disabled: false,
+    fullWidth: true,
+    variant: 'primary',
+  },
+}

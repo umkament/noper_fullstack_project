@@ -1,7 +1,7 @@
-@use 'src/styles/mixins';
+@import 'src/styles/mixins';
 
 .body1 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-regular);
@@ -10,7 +10,7 @@
 }
 
 .body2 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
@@ -19,7 +19,7 @@
 }
 
 .caption {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-regular);
@@ -28,7 +28,7 @@
 }
 
 .h1 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
@@ -37,7 +37,7 @@
 }
 
 .h2 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-bold);
@@ -46,7 +46,7 @@
 }
 
 .h3 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
@@ -55,7 +55,7 @@
 }
 
 .large {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-bold);
@@ -64,7 +64,7 @@
 }
 
 .link1 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
@@ -74,7 +74,7 @@
 }
 
 .link2 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-regular);
@@ -84,7 +84,7 @@
 }
 
 .overline {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
@@ -93,7 +93,7 @@
 }
 
 .subtitle1 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
@@ -102,7 +102,7 @@
 }
 
 .subtitle2 {
-  @include mixins.typography;
+  @include typography;
 
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-bold);

@@ -1,11 +1,11 @@
-@use 'src/styles/mixins';
+@import 'src/styles/mixins';
 
 // .button {
 //   all: unset;
 // }
 
 .buttonTrigger {
-  @include mixins.buttons;
+  @include buttons;
 
   font-family: var(--font-family-second);
 

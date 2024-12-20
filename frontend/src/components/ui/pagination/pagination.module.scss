@@ -27,11 +27,11 @@
 }
 
 .dots {
-  @include mixins.item;
+  @include item;
 }
 
 .item {
-  @include mixins.item;
+  @include item;
 
   cursor: pointer;
 

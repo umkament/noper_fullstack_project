@@ -1,5 +1,5 @@
 # Используем Node.js образ
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 
 # Устанавливаем pnpm
 RUN npm install -g pnpm
@@ -12,9 +12,9 @@ COPY pnpm-lock.yaml ./
 # Устанавливаем зависимости
 RUN pnpm install
 
-# Копируем все файлы проекта
+
 COPY . .
-# ENV NODE_OPTIONS="--max-old-space-size=4096"
+
 # Собираем проект
 RUN pnpm run build
 
