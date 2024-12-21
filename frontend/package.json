@@ -1,7 +1,7 @@
 {
   "name": "noper_app",
   "private": true,
-  "homepage": "https://umkament.github.io/noper_app_front",
+  "homepage": ".",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

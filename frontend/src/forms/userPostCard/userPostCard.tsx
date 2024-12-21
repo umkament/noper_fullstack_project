@@ -48,11 +48,11 @@ export const UserPostCard: React.FC<UserPostCardProps> = ({ post }) => {
   }
   const avatarImage =
     post?.user.avatarUrl && post.user.avatarUrl.startsWith('/uploads/')
-      ? `http://51.250.51.234:4411${post.user.avatarUrl}` // Если путь относительный и начинается с /uploads/
+      ? `http://84.201.184.120/api${post.user.avatarUrl}` // Если путь относительный и начинается с /uploads/
       : post.user.avatarUrl || `https://robohash.org/${post.user.username}.png`
   const postImage =
     post?.imageUrl && post.imageUrl.startsWith('/uploads/')
-      ? `http://51.250.51.234:4411${post.imageUrl}`
+      ? `http://84.201.184.120/api${post.imageUrl}`
       : post.imageUrl || postImg
 
   return (

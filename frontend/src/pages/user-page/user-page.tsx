@@ -90,7 +90,7 @@ export const UserPageContent: React.FC<UserProps> = ({ posts, user, userId }) =>
             className={s.imgStyle}
             src={
               user?.avatarUrl && user.avatarUrl.startsWith('/uploads/')
-                ? `http://51.250.51.234:4411${user.avatarUrl}` // Если путь относительный и начинается с /uploads/
+                ? `http://84.201.184.120/api${user.avatarUrl}` // Если путь относительный и начинается с /uploads/
                 : user?.avatarUrl || `https://robohash.org/${user?.username}.png` // Если URL полный или не задан
             }
           />
@@ -139,7 +139,7 @@ export const UserPageContent: React.FC<UserProps> = ({ posts, user, userId }) =>
                 key={post._id}
                 src={
                   post?.imageUrl && post.imageUrl.startsWith('/uploads/')
-                    ? `http://51.250.51.234:4411${post.imageUrl}` // Если путь относительный и начинается с /uploads/
+                    ? `http://84.201.184.120/api${post.imageUrl}` // Если путь относительный и начинается с /uploads/
                     : post.imageUrl || postImg
                 }
               />

@@ -1,5 +1,7 @@
 # Используем Node.js образ
-FROM node:20-alpine AS build
+FROM node:20 AS build
+
+WORKDIR /app 
 
 # Устанавливаем npm (если его нет)
 RUN apk add --no-cache npm

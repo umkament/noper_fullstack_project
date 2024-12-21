@@ -100,7 +100,7 @@ export const Layout = () => {
                 <AvatarWithName
                   avatar={
                     userData?.avatarUrl
-                      ? `http://51.250.51.234:4411L${userData.avatarUrl}`
+                      ? `http://84.201.184.120/api${userData.avatarUrl}`
                       : `https://robohash.org/${userData?.username}.png`
                   }
                   name={<Typography className={s.name}>{userData.username}</Typography>}
@@ -114,7 +114,7 @@ export const Layout = () => {
                     <Avatar
                       avatar={
                         userData?.avatarUrl
-                          ? `http://51.250.51.234:4411${userData.avatarUrl}`
+                          ? `http://84.201.184.120/api${userData.avatarUrl}`
                           : `https://robohash.org/${userData?.username}.png`
                       }
                     />

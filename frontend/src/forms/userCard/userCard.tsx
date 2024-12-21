@@ -36,7 +36,7 @@ export const UserCard: React.FC<UserPostCardProps> = ({ user }) => {
           className={s.imgprof}
           src={
             user?.avatarUrl && user.avatarUrl.startsWith('/uploads/')
-              ? `http://51.250.51.234:4411${user.avatarUrl}` // Если путь относительный и начинается с /uploads/
+              ? `http://84.201.184.120/api${user.avatarUrl}` // Если путь относительный и начинается с /uploads/
               : user?.avatarUrl || `https://robohash.org/${user?.username}.png` // Если URL полный или не задан
           }
         />

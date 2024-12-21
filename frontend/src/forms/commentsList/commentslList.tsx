@@ -39,7 +39,7 @@ export const CommentsList: React.FC<CommentListType> = ({
       {comments && comments.length > 0 ? (
         comments.map(comment => {
           const avatarUrl = comment.user.avatarUrl?.startsWith('/uploads/')
-            ? `http://51.250.51.234:4411${comment.user.avatarUrl}`
+            ? `http://84.201.184.120/api${comment.user.avatarUrl}`
             : comment.user.avatarUrl ||
               `https://robohash.org/${comment.user.username || 'unknown'}.png`
 

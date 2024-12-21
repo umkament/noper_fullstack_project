@@ -116,7 +116,7 @@ export const EditProfilePage = () => {
     if (avatarPreview) {
       return avatarPreview.startsWith('blob')
         ? avatarPreview
-        : `http://51.250.51.234:4411${avatarPreview}`
+        : `http://84.201.184.120/api${avatarPreview}`
     }
 
     return `https://robohash.org/${user?.username}.png`

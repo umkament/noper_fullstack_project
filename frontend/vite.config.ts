@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 //import vitePluginSass from 'vite-plugin-sass'
 
 export default defineConfig({
-  base: '/noper_app_front/',
+  base: '/noper/',
   build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 3000, 
