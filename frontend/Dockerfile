@@ -1,6 +1,9 @@
 # Используем Node.js образ
 FROM node:20-alpine AS build
 
+# Устанавливаем npm (если его нет)
+RUN apk add --no-cache npm
+
 # Устанавливаем pnpm
 RUN npm install -g pnpm
 
