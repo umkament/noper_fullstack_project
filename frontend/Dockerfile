@@ -24,7 +24,7 @@ FROM nginx:stable-alpine
 # Копируем собранный фронтенд
 COPY --from=build /dist /usr/share/nginx/html
 # Копируем конфигурацию Nginx
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Запуск Nginx
 CMD ["nginx", "-g", "daemon off;"]
