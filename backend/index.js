@@ -63,6 +63,7 @@ const corsOptions = {
   ], // Допустимые источники
   credentials: true, // Разрешить отправку куков и токенов
   methods: 'GET,POST,PUT,DELETE,PATCH',
+  allowedHeaders: 'Content-Type, Authorization',
 }
 
 //указываем, что в приложении нужно использовать json из самого express
@@ -136,6 +137,11 @@ app.post('/likes/bulk', checkAuth, LikeController.getLikesBulk)
 app.get('/saved', checkAuth, getSavedToUser);
 app.post('/saved/toggle', checkAuth, toggleSavedItem);
 
+
+
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
 
 
 
