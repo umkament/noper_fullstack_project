@@ -59,7 +59,8 @@ const corsOptions = {
   origin: [
     'http://localhost:5173', 
     'https://storage.yandexcloud.net/noper/index.html',
-    'http://storage.yandexcloud.net/noper.space/index.html'
+    'https://storage.yandexcloud.net/noper.space/index.html',
+    'https://noper.space'
   ], // Допустимые источники
   credentials: true, // Разрешить отправку куков и токенов
   methods: 'GET,POST,PUT,DELETE,PATCH',
