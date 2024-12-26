@@ -84,14 +84,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cookieParser());
 
 
-// Обработка preflight-запросов для всех источников
-app.options('*', cors({
-  origin: [
-    'https://storage.yandexcloud.net/noper.space',
-    'https://storage.yandexcloud.net'
-  ],
-  credentials: true,
-}));
+// Обработка preflight-запросов (OPTIONS)
+app.options('*', cors(corsOptions));
 
 // если придет запрос на '/auth/register', тогда мы проверим этот запрос на валидацию, прописанную в registerValidation
 // и если валидация проходит, то только после этого начнет выполняться колбэк функция
