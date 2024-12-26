@@ -56,7 +56,7 @@ const upload = multer({storage,
 },})
 
 const corsOptions = {
-  origin: 'https://storage.yandexcloud.net/noper.space',
+  origin: 'https://storage.yandexcloud.net',
   // function (origin, callback) {
   //   const allowedOrigins = [
   //     'http://localhost:5173',
