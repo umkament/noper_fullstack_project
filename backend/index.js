@@ -116,7 +116,7 @@ app.get('/user/:userId', UserController.getOneUser)
 app.get('/user/:userId/posts', PostController.getUserPosts)
 
 //посты: получение, создание, редактирование, удаление
- app.get('/posts', PostController.getAll)
+ app.get('api/posts', PostController.getAll)
  app.get('/post/:id', PostController.getOne)
  app.delete('/post/:id', checkAuth, PostController.remove)
  app.patch('/post/:id', checkAuth, postCreateValidation,handleValidationErrors, PostController.update)
