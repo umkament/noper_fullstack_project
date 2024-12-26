@@ -3,8 +3,8 @@ FROM node:20 AS build
 
 WORKDIR /app 
 
-# Устанавливаем npm (если его нет)
-RUN apk add --no-cache npm
+# # Устанавливаем npm (если его нет)
+# RUN apk add --no-cache npm
 
 # Устанавливаем pnpm
 RUN npm install -g pnpm
