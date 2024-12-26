@@ -56,16 +56,24 @@ const upload = multer({storage,
 },})
 
 const corsOptions = {
-  origin: [
-    'http://localhost:5173', 
-    'https://storage.yandexcloud.net/noper/index.html',
-    'https://storage.yandexcloud.net/noper.space/index.html',
-    'https://noper.space'
-  ], // Допустимые источники
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:5173',
+      'https://storage.yandexcloud.net',
+      'https://storage.yandexcloud.net/noper.space',
+      'https://noper.space'
+    ];
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true); // Разрешаем запрос
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true, // Разрешить отправку куков и токенов
-  methods: 'GET,POST,PUT,DELETE,PATCH',
+  methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
   allowedHeaders: 'Content-Type, Authorization',
-}
+};
+
 
 //указываем, что в приложении нужно использовать json из самого express
 //благодаря этому наше приложение может читать json формат
@@ -75,6 +83,15 @@ app.use(cors(corsOptions))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cookieParser());
 
+
+// Обработка preflight-запросов для всех источников
+app.options('*', cors({
+  origin: [
+    'https://storage.yandexcloud.net/noper.space',
+    'https://storage.yandexcloud.net'
+  ],
+  credentials: true,
+}));
 
 // если придет запрос на '/auth/register', тогда мы проверим этот запрос на валидацию, прописанную в registerValidation
 // и если валидация проходит, то только после этого начнет выполняться колбэк функция
