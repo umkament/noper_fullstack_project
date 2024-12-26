@@ -56,19 +56,20 @@ const upload = multer({storage,
 },})
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      'http://localhost:5173',
-      'https://storage.yandexcloud.net',
-      'https://storage.yandexcloud.net/noper.space',
-      'https://noper.space'
-    ];
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true); // Разрешаем запрос
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: 'https://storage.yandexcloud.net/noper.space',
+  // function (origin, callback) {
+  //   const allowedOrigins = [
+  //     'http://localhost:5173',
+  //     'https://storage.yandexcloud.net',
+  //     'https://storage.yandexcloud.net/noper.space',
+  //     'https://noper.space'
+  //   ];
+  //   if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+  //     callback(null, true); // Разрешаем запрос
+  //   } else {
+  //     callback(new Error('Not allowed by CORS'));
+  //   }
+  // },
   credentials: true, // Разрешить отправку куков и токенов
   methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
   allowedHeaders: 'Content-Type, Authorization',
