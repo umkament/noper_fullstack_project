@@ -60,7 +60,6 @@ const corsOptions = {
     const allowedOrigins = [
       'http://localhost:5173',
       'https://storage.yandexcloud.net',
-      'https://storage.yandexcloud.net/noper.space',
       'https://noper.space'
     ];
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -83,9 +82,6 @@ app.use(cors(corsOptions))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cookieParser());
 
-
-// Обработка preflight-запросов (OPTIONS)
-app.options('*', cors(corsOptions));
 
 // если придет запрос на '/auth/register', тогда мы проверим этот запрос на валидацию, прописанную в registerValidation
 // и если валидация проходит, то только после этого начнет выполняться колбэк функция
