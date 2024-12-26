@@ -7,9 +7,6 @@ export const postsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_API_URL,
     credentials: 'include',
-    // prepareHeaders: headers => {
-    //   headers.append('x-auth-skip', 'true')
-    // },
   }),
   endpoints: builder => {
     return {
